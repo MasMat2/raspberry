@@ -10,6 +10,7 @@ def setup():
 	GPIO.output(LedPin, GPIO.HIGH) # Set LedPin high(+3.3V) to off led
 
 def loop():
+	i = 1
 	while 1:
 		GPIO.output(LedPin, GPIO.LOW)  # led on
 		time.sleep(1/i)
