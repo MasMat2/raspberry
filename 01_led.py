@@ -15,9 +15,10 @@ def loop():
 		GPIO.output(LedPin, GPIO.LOW)  # led on
 		time.sleep(1/i)
 		GPIO.output(LedPin, GPIO.HIGH) # led off
-		time.sleep(1/(((2000/3)+0.01)-i))
+		a = ((2000/3)+0.01)-i
+		time.sleep(1/a)
 		i += 1
-		if i > 1000:
+		if i > 666:
 			i = 1
 
 
