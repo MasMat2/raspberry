@@ -11,10 +11,8 @@ def setup():
 
 def loop():
 	while True:
-		print '...led on'
 		GPIO.output(LedPin, GPIO.LOW)  # led on
 		time.sleep(0.5)
-		print 'led off...'
 		GPIO.output(LedPin, GPIO.HIGH) # led off
 		time.sleep(0.5)
 
@@ -28,4 +26,3 @@ if __name__ == '__main__':     # Program start from here
 		loop()
 	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
 		destroy()
-
