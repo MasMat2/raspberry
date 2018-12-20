@@ -17,10 +17,10 @@ def swLed(ev=None):
 	global Led_status
 	Led_status = not Led_status
 	GPIO.output(LedPin, Led_status)  # switch led status(on-->off; off-->on)
-	if Led_status == 1:
-		print 'led off...'
-	else:
-		print '...led on'
+	# if Led_status == 1:
+	# 	print 'led off...'
+	# else:
+	# 	print '...led on'
 
 def loop():
 	GPIO.add_event_detect(BtnPin, GPIO.FALLING, callback=swLed, bouncetime=200) # wait for falling and set bouncetime to prevent the callback function from being called multiple times when the button is pressed
@@ -37,4 +37,3 @@ if __name__ == '__main__':     # Program start from here
 		loop()
 	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
 		destroy()
-
