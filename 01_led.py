@@ -10,11 +10,15 @@ def setup():
 	GPIO.output(LedPin, GPIO.HIGH) # Set LedPin high(+3.3V) to off led
 
 def loop():
-	while True:
+	while 1:
 		GPIO.output(LedPin, GPIO.LOW)  # led on
-		time.sleep(0.5)
+		time.sleep(1/i)
 		GPIO.output(LedPin, GPIO.HIGH) # led off
-		time.sleep(0.5)
+		time.sleep(1/(((2000/3)+0.01)-i))
+		i += 1
+		if i > 1000:
+			i = 1
+
 
 def destroy():
 	GPIO.output(LedPin, GPIO.HIGH)     # led off
